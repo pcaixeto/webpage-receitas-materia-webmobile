@@ -12,6 +12,9 @@ body {
   background: #f7f7f7;
   color: #333;
 }
+main{
+  min-height: 100vh;
+}
 
 /* Cabeçalho */
 header {
@@ -23,6 +26,7 @@ header {
 
 header h1 {
   margin-bottom: 10px;
+  font-family: Arial, sans-serif;
 }
 
 nav ul {
@@ -36,6 +40,16 @@ nav ul li a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
+  transition: 0.3s;
+}
+a{
+  
+  font-size: 18px;
+}
+a:hover{ 
+  background: #ff9381;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 /* Carousel */
@@ -57,12 +71,21 @@ nav ul li a {
   max-width: 600px;
   width: 100%;
   height: auto;
-  margin: 0 auto; /* centraliza a imagem se o container for maior */
+  margin: 0 auto; 
+  /* centraliza a imagem se o container for maior */
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .recipe-card img {
-  width: 100%;
-  display: block;
+  display: flex;
+  justify-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  
 }
 
 .recipe-content {
@@ -104,9 +127,10 @@ nav ul li a {
   font-size: 2rem;
   padding: 10px;
   cursor: pointer;
-  border-radius: 50%;
+  border-radius: 10px;
   z-index: 100;
 }
+
 
 .carousel-control.prev {
   left: 10px;
