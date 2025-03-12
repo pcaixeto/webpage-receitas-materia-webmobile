@@ -82,11 +82,25 @@ a:hover{
 
 .recipe-content {
   padding: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+ 
+}
+
+.recipe-card {
+  padding: 25px;
+}
+
+.recipe-btn {
+  margin-top: 15px;
 }
 
 .recipe-content h2 {
   margin-bottom: 10px;
   color: #ff6347;
+  margin-top: 100px;
+ 
 }
 
 .recipe-content p {
@@ -126,7 +140,7 @@ a:hover{
 /* Controles do Carousel */
 .carousel-control {
   position: absolute;
-  top: 50%;
+  top: 40%;
   transform: translateY(-50%);
   background: rgba(255, 99, 71, 0.8);
   color: #fff;
@@ -137,7 +151,16 @@ a:hover{
   border-radius: 10px;
   z-index: 100;
 }
-
+#titulo{
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .carousel-control {
+    top: 20%;
+    padding: 5px;
+    border-radius: 5px;
+  }
+}
 
 .carousel-control.prev {
   left: 10px;
