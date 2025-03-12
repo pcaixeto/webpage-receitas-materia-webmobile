@@ -101,6 +101,21 @@ a:hover{
   margin-bottom: 15px;
 }
 
+/* Estilos específicos para recipe.html */
+.recipe-detail {
+  max-width: 800px;     
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.recipe-detail #recipe-image {
+  display: block;
+  max-width: 100%;
+  height: auto; 
+  margin: 0 auto 20px;
+}
+
 /* Botão */
 .btn {
   display: inline-block;
@@ -147,4 +162,11 @@ footer {
   text-align: center;
   padding: 15px;
   margin-top: 20px;
+}
+
+.recipe-detail ul,
+.recipe-detail ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
