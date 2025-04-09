@@ -168,7 +168,6 @@ footer {
   padding: 0;
 }
 
-/* Chat Popup
 #chat-popup {
   position: fixed;
   bottom: 20px;
@@ -212,7 +211,7 @@ footer {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-#chat-popup .chat-input button {
+chat-popup .chat-input button {
   margin-left: 5px;
   padding: 5px 10px;
   border: none;
@@ -220,9 +219,8 @@ footer {
   color: #fff;
   border-radius: 4px;
   cursor: pointer;
-} */
+} 
 
-/* Ajuste para o <dialog> ficar fixo no canto inferior direito */
 dialog#chat-popup {
   position: fixed;
   bottom: 20px;
@@ -238,7 +236,7 @@ dialog#chat-popup {
 }
 
 /* Quando o <dialog> está aberto, forçar exibição em block */
-dialog#chat-popup[open] {
+/* dialog#chat-popup[open] {
   display: block; 
 }
 

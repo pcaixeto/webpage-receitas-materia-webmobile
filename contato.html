@@ -38,24 +38,19 @@
       </article>
     </section>
 
-  <dialog id="chat-popup">
-    <header>
-      <h2>Contato</h2>
-      <button id="close-chat" aria-label="Fechar chat">X</button>
+  <article id="chat-popup" style="display: none;">
+    <header class="chat-header">
+      <h2>Chat</h2>
+      <button id="close-chat">X</button>
     </header>
-    <section>
-      <p>Olá! Como podemos ajudar?</p>
+    <section class="chat-body">
+      <p>Olá! Como posso ajudar?</p>
     </section>
-    <footer>
-      <label for="chat-message" class="sr-only">Mensagem</label>
-      <input
-        type="text"
-        id="chat-message"
-        placeholder="Digite sua mensagem..."
-      />
-      <button type="button" id="send-chat">Enviar</button>
+    <footer class="chat-input">
+      <input type="text" placeholder="Digite sua mensagem..." />
+      <button>Enviar</button>
     </footer>
-  </dialog>
+  </article>
 
 </main>
 
