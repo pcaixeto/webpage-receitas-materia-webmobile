@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  // === Código para o carousel na página index ===
   $('.recipe-card').hide();
   $('.recipe-card').first().show();
 
@@ -24,9 +25,8 @@ $(document).ready(function() {
     });
   });
 
-  // Verifica se estamos na página de receita
+  // === Código para verificar se estamos na página recipe.html e popular os dados da receita ===
   if (window.location.pathname.indexOf("recipe.html") !== -1) {
-    // Função para extrair parâmetros da URL
     function getParameterByName(name) {
       name = name.replace(/[\[\]]/g, "\\$&");
       var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
@@ -36,7 +36,6 @@ $(document).ready(function() {
       return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
 
-    // Dados das receitas (adicione aqui todas as receitas necessárias)
     var recipes = {
       "bolo-chocolate": {
         title: "Bolo de Chocolate",
@@ -83,18 +82,15 @@ $(document).ready(function() {
 
     if (recipeId && recipes[recipeId]) {
       var recipe = recipes[recipeId];
-      // Atualiza os elementos da página com os dados da receita
       $("#header-title").text(recipe.title);
       $("#recipe-title").text(recipe.title);
       $("#recipe-image").attr("src", recipe.image).attr("alt", "Imagem de " + recipe.title);
 
-      // Preenche a lista de ingredientes
       var ingredientsList = $("#ingredients-list");
       $.each(recipe.ingredients, function(index, ingredient) {
         ingredientsList.append("<li>" + ingredient + "</li>");
       });
 
-      // Preenche a lista de modo de preparo
       var instructionsList = $("#instructions-list");
       $.each(recipe.instructions, function(index, instruction) {
         instructionsList.append("<li>" + instruction + "</li>");
@@ -102,34 +98,40 @@ $(document).ready(function() {
     } else {
       $("main").html("<p>Receita não encontrada.</p>");
     }
+
+    // === Efeito de slide para revelar/esconder a informação extra (dica) ===
+    $('#toggle-tip').click(function(e) {
+      e.preventDefault();
+      var tipSection = $(this).closest('.recipe-detail').find('.extra-info');
+      if(tipSection.is(':visible')){
+        tipSection.slideUp(300);
+        $(this).text('Mostrar Dica');
+      } else {
+        tipSection.slideDown(300);
+        $(this).text('Esconder Dica');
+      }
+    });
   }
 });
 
-// CHAT DE CONTATO
+// === Código para o chat de contato, presente em todas as páginas onde houver o chat ===
 $(document).ready(function(){
-  // Exibe o chat popup ao clicar no botão "Entrar em Contato"
   $('.contact-btn').click(function(){
     $('#chat-popup').fadeIn(300);
   });
   
-  // Fecha o chat popup quando clicar no botão "X"
   $('#close-chat').click(function(){
     $('#chat-popup').fadeOut(300);
   });
 });
 
 $(document).ready(function(){
-  // Ao clicar no botão, extrai o nome do contato e atualiza o título do chat
   $('.contact-btn').click(function(){
-    // Encontra o h2 dentro do mesmo article (cartão de contato)
     var contactName = $(this).closest('article').find('h2').text();
-    // Atualiza o título do chat para "Chat com [Nome]"
     $('#chat-popup header h2').text("Chat com " + contactName);
-    // Exibe o dialog (chat popup) usando a API nativa
     document.getElementById('chat-popup').showModal();
   });
 
-  // Botão para fechar o chat
   $('#close-chat').click(function(){
     document.getElementById('chat-popup').close();
   });
