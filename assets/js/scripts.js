@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  // === Código para o carousel na página index ===
+  // carrousel
   $('.recipe-card').hide();
   $('.recipe-card').first().show();
 
@@ -25,7 +25,6 @@ $(document).ready(function() {
     });
   });
 
-  // === Código para verificar se estamos na página recipe.html e popular os dados da receita ===
   if (window.location.pathname.indexOf("recipe.html") !== -1) {
     function getParameterByName(name) {
       name = name.replace(/[\[\]]/g, "\\$&");
@@ -99,11 +98,9 @@ $(document).ready(function() {
       $("main").html("<p>Receita não encontrada.</p>");
     }
 
-    // === Exibe a push notification (toast) com a dica ===
-    // Aguarda 2 segundos após o carregamento da página para exibir a notificação
+    // push notification da dica de receita
     setTimeout(function() {
       $("#push-notification").slideDown(300, function() {
-        // Após 5 segundos, a notificação desaparece automaticamente
         setTimeout(function() {
           $("#push-notification").slideUp(300);
         }, 5000);
@@ -112,8 +109,7 @@ $(document).ready(function() {
   }
 });
 
-
-// === Código para o chat de contato, presente em todas as páginas onde houver o chat ===
+// Chat de contato
 $(document).ready(function(){
   $('.contact-btn').click(function(){
     $('#chat-popup').fadeIn(300);
