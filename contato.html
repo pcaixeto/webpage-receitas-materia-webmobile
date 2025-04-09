@@ -3,9 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Receitas Deliciosas</title>
+  <title>Contatos - Receitas Deliciosas</title>
   <link rel="stylesheet" href="assets/css/styles.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+
+  </style>
 </head>
 <body>
   <header>
@@ -17,8 +20,45 @@
       </ul>
     </nav>
   </header>
-  <article>
-    <h1 id="titulo">Contatos</h1>
-  </article>
+
+  <main>
+    <section class="contacts">
+      <article class="contact-card">
+        <h2>Pedro Caixeta</h2>
+        <p>Email: pedro.caixeta@pichu.com</p>
+        <p>Telefone: (11) 98765-4321</p>
+        <button class="contact-btn">Entrar em Contato</button>
+      </article>
+
+      <article class="contact-card">
+        <h2>Estephany Silva</h2>
+        <p>Email: estephany.silva@pichu.com</p>
+        <p>Telefone: (21) 91234-5678</p>
+        <button class="contact-btn">Entrar em Contato</button>
+      </article>
+    </section>
+
+  <dialog id="chat-popup">
+    <header>
+      <h2>Contato</h2>
+      <button id="close-chat" aria-label="Fechar chat">X</button>
+    </header>
+    <section>
+      <p>Olá! Como podemos ajudar?</p>
+    </section>
+    <footer>
+      <label for="chat-message" class="sr-only">Mensagem</label>
+      <input
+        type="text"
+        id="chat-message"
+        placeholder="Digite sua mensagem..."
+      />
+      <button type="button" id="send-chat">Enviar</button>
+    </footer>
+  </dialog>
+
+</main>
+
+  <script src="assets/js/scripts.js"></script>
 </body>
 </html>

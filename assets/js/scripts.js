@@ -100,8 +100,37 @@ $(document).ready(function() {
         instructionsList.append("<li>" + instruction + "</li>");
       });
     } else {
-      // Se o ID não existir ou a receita não for encontrada
       $("main").html("<p>Receita não encontrada.</p>");
     }
   }
+});
+
+// CHAT DE CONTATO
+$(document).ready(function(){
+  // Exibe o chat popup ao clicar no botão "Entrar em Contato"
+  $('.contact-btn').click(function(){
+    $('#chat-popup').fadeIn(300);
+  });
+  
+  // Fecha o chat popup quando clicar no botão "X"
+  $('#close-chat').click(function(){
+    $('#chat-popup').fadeOut(300);
+  });
+});
+
+$(document).ready(function(){
+  // Ao clicar no botão, extrai o nome do contato e atualiza o título do chat
+  $('.contact-btn').click(function(){
+    // Encontra o h2 dentro do mesmo article (cartão de contato)
+    var contactName = $(this).closest('article').find('h2').text();
+    // Atualiza o título do chat para "Chat com [Nome]"
+    $('#chat-popup header h2').text("Chat com " + contactName);
+    // Exibe o dialog (chat popup) usando a API nativa
+    document.getElementById('chat-popup').showModal();
+  });
+
+  // Botão para fechar o chat
+  $('#close-chat').click(function(){
+    document.getElementById('chat-popup').close();
+  });
 });

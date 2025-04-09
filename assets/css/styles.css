@@ -168,6 +168,155 @@ footer {
   padding: 0;
 }
 
+/* Chat Popup
+#chat-popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 1000;
+}
+#chat-popup .chat-header {
+  background: #ff6347;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#chat-popup .chat-header button {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+#chat-popup .chat-body {
+  padding: 10px;
+  height: 150px;
+  overflow-y: auto;
+}
+#chat-popup .chat-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+#chat-popup .chat-input input {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+#chat-popup .chat-input button {
+  margin-left: 5px;
+  padding: 5px 10px;
+  border: none;
+  background: #ff6347;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+} */
+
+/* Ajuste para o <dialog> ficar fixo no canto inferior direito */
+dialog#chat-popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  margin: 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  background: #fff;
+}
+
+/* Quando o <dialog> está aberto, forçar exibição em block */
+dialog#chat-popup[open] {
+  display: block; 
+}
+
+/* Remover a default margin/padding do <dialog> se houver */
+dialog#chat-popup::-webkit-details-marker {
+  display: none;
+}
+
+/* Cabeçalho do chat */
+dialog#chat-popup > header {
+  background: #ff6347;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px 10px 0 0;
+  /* Se quiser remover o "X" do Chrome/Firefox no canto do <dialog>, pode precisar de hacks extras */
+}
+
+/* Botão de fechar dentro do cabeçalho */
+dialog#chat-popup > header button {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Seção de conteúdo do chat (mensagem de boas-vindas, rolagem) */
+dialog#chat-popup > section {
+  padding: 10px;
+  max-height: 150px;
+  overflow-y: auto;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Rodapé do chat (input + botão de enviar) */
+dialog#chat-popup > footer {
+  display: flex;
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
+  align-items: center;
+}
+
+dialog#chat-popup > footer .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+
+dialog#chat-popup > footer input {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+dialog#chat-popup > footer button {
+  margin-left: 5px;
+  padding: 5px 10px;
+  border: none;
+  background: #ff6347;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+dialog#chat-popup > footer button:hover {
+  background: #e5533d;
+}
+
+
 /* MEDIA QUERIES */
 
 /* Ajustes para tablets e telas intermediárias (máximo de 768px) */
