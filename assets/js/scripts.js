@@ -99,20 +99,19 @@ $(document).ready(function() {
       $("main").html("<p>Receita não encontrada.</p>");
     }
 
-    // === Efeito de slide para revelar/esconder a informação extra (dica) ===
-    $('#toggle-tip').click(function(e) {
-      e.preventDefault();
-      var tipSection = $(this).closest('.recipe-detail').find('.extra-info');
-      if(tipSection.is(':visible')){
-        tipSection.slideUp(300);
-        $(this).text('Mostrar Dica');
-      } else {
-        tipSection.slideDown(300);
-        $(this).text('Esconder Dica');
-      }
-    });
+    // === Exibe a push notification (toast) com a dica ===
+    // Aguarda 2 segundos após o carregamento da página para exibir a notificação
+    setTimeout(function() {
+      $("#push-notification").slideDown(300, function() {
+        // Após 5 segundos, a notificação desaparece automaticamente
+        setTimeout(function() {
+          $("#push-notification").slideUp(300);
+        }, 5000);
+      });
+    }, 2000);
   }
 });
+
 
 // === Código para o chat de contato, presente em todas as páginas onde houver o chat ===
 $(document).ready(function(){

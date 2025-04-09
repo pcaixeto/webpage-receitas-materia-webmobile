@@ -314,6 +314,20 @@ dialog#chat-popup > footer button:hover {
   background: #e5533d;
 }
 
+#push-notification {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #ff47d7;
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  z-index: 2000;
+  font-size: 1rem;
+}
+
 
 /* MEDIA QUERIES */
 

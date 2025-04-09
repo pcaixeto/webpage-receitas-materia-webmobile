@@ -6,6 +6,7 @@
   <title>Receita</title>
   <link rel="stylesheet" href="assets/css/styles.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
 </head>
 <body>
   <header>
@@ -27,15 +28,14 @@
         <ul id="ingredients-list"></ul>
         <h3>Modo de Preparo:</h3>
         <ol id="instructions-list"></ol>
-        <!-- Botão para revelar a dica -->
-        <button id="toggle-tip" class="btn">Mostrar Dica</button>
-      </section>
-      <!-- Seção extra oculta com a dica -->
-      <section class="extra-info" style="display: none;">
-        <p>Dica: Utilize ingredientes frescos para potencializar os sabores da receita!</p>
       </section>
     </article>
   </main>
+
+  <!-- Elemento para a push notification (toast) da dica -->
+  <aside id="push-notification" role="alert">
+    <p>Dica: Utilize ingredientes frescos para potencializar os sabores da receita!</p>
+  </aside>
 
   <script src="assets/js/scripts.js"></script>
 </body>
